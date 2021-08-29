@@ -120,15 +120,15 @@ let user = false;
       >
         <Menu.Item key="3" onClick={onDrawerClose}>
           <Link href="/blog" style={{ color: "#ffffff" }}>
-            Blogs
+            IPO
           </Link>
         </Menu.Item>
         <Menu.Item key="2" onClick={onDrawerClose}>
           <Link href="/questions" style={{ color: "#ffffff" }}>
-            Questions
+            Market
           </Link>
         </Menu.Item>
-        {user === "na" ? (
+        {/* {user === "na" ? (
           <Menu.Item key="1" onClick={onDrawerClose}>
             <Link href="/login" style={{ color: "#ffffff" }}>
               Login/Register
@@ -148,7 +148,7 @@ let user = false;
           </Menu.Item>
         ) : (
           userMenuItem
-        )}
+        )} */}
       </Menu>
     );
   };

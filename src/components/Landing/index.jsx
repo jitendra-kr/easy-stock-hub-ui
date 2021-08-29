@@ -1,7 +1,47 @@
 
+import React, { useState } from 'react';
+
+import { Layout, AutoComplete } from 'antd';
+
+const { Content } = Layout;
+
+const mockVal = (str, repeat = 1) => ({
+  value: str.repeat(repeat),
+});
 
 export default function Landing() {
+
+  const [value, setValue] = useState('');
+  const [options, setOptions] = useState([]);
+
+  const onSearch = (searchText) => {
+    setOptions(
+      !searchText ? [] : [mockVal(searchText), mockVal(searchText, 2), mockVal(searchText, 3)],
+    );
+  };
+
+  const onSelect = (data) => {
+    console.log('onSelect', data);
+  };
+
+  const onChange = (data) => {
+    setValue(data);
+  };
+
   return (
-    <p>Search</p>
+    <>
+      <AutoComplete
+          value={value}
+          options={options}
+          style={{
+            width: 200,
+          }}
+          onSelect={onSelect}
+          onSearch={onSearch}
+          onChange={onChange}
+          size="large"
+          placeholder="control mode"
+        />
+    </>
   )
 }
