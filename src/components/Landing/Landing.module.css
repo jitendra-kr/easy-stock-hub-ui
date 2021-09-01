@@ -1,0 +1,15 @@
+.search-heading {
+    font-weight: 600;
+    font-size: 3rem;
+}
+
+.search-p {
+    color: #0078ff;
+    font-size: 1.375rem;
+    font-weight: 600;
+}
+
+.input {
+    line-height: 2 !important;
+    border-radius: 35px !important;
+}
