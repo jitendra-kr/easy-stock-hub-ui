@@ -57,7 +57,6 @@ export default function Landing() {
           onSelect={onSelect}
           onSearch={onSearch}
           onChange={onChange}
-          size="large"
           allowClear={true}
           >
                   <Input className={styles['input']} suffix={suffix} size="large" placeholder="Type here to search" />

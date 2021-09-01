@@ -162,7 +162,7 @@ let user = false;
 
   return md !== undefined ? (
     <Layout>
-      <Header className="header theme-color">
+      <Header className={styles['header'], "theme-color"}>
         <Row>
           <Col span={8}>
             <Link href="/">
@@ -175,22 +175,15 @@ let user = false;
                   cursor: "pointer",
                 }}
               >
-                <span>
-                Easy Stock Hub
-                </span>
-                {/* <p>
+                <div>
+
+                <h1 className={ styles['easy'] + ' ' +  "color-white"}>
                 Easy 
-                </p>
-                <p>
-                Stock Hub
-                </p> */}
-
-                  {/* <div className={styles.circle}>
-                    Easy Stock Hub
-                    </div> */}
-
-                
-                {/* <img src='../../../logo.PNG' ></img> */}
+                </h1>
+                <h2 className={ styles['stock-hub'] + ' ' + "color-white"} >
+                 Stock Hub
+                </h2>
+                </div>
               </div>
             </Link>
           </Col>
