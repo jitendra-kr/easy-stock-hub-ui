@@ -3,6 +3,7 @@ import { Layout, Row, Col } from 'antd';
 import { MainFooter, MainHeader } from '../src/components'
 
 import '../styles/globals.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import 'antd/dist/antd.css';
 
 
@@ -10,16 +11,18 @@ const { Content } = Layout;
 
 
 function MyApp({ Component, pageProps }) {
-  return <Layout>
+  console.log(Component)
+  return <Layout className='white-bg'>
     <MainHeader></MainHeader>
 
-    <Content>
-      <Row>
-        <Col span={16} style={{ padding: "50px 45px 59px 56px" }}>        
+    <Content >
+      <Row className='min-height-custom' >
+        <Col xxl={20} xl={20} lg={20} md={20} sm={24} xs={24} style={{ padding: "50px 10px 59px 56px" }}>        
             <Component {...pageProps} />
         </Col>
-        <Col span={8}>
-          col-12</Col>
+        <Col xxl={4} xl={4} lg={4} md={4} sm={24} xs={24}>
+          col-12
+          </Col>
       </Row>
     </Content>
     <MainFooter></MainFooter>

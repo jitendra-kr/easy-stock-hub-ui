@@ -12,26 +12,38 @@ a {
   text-decoration: none;
 }
 
+.white-bg {
+  background-color: #ffffff !important;
+}
+
 * {
   box-sizing: border-box;
 }
 
+.ant-layout-content {
+  min-height: 100vh !important;
+  line-height: 30px !important;
+}
 
+.ant-layout-footer {
+  color: #ffffff !important;
+}
 
 .footer {
-  background-color: #04152A !important;
+  background-color: #242729 !important;
   color: #ffffff;
   padding: 24px 50px ;
   text-align: center;
-  /* margin-top: 0 !important;
+}
 
-  position: relative;
+.theme-color {
+  background: #0078FF !important;
+}
 
+.ant-menu.ant-menu-dark, .ant-menu-dark .ant-menu-sub, .ant-menu.ant-menu-dark .ant-menu-sub {
+  background: #0078FF !important;
+}
+
+.ant-menu-dark .ant-menu-item, .ant-menu-dark .ant-menu-item-group-title, .ant-menu-dark .ant-menu-item > a, .ant-menu-dark .ant-menu-item > span > a {
   color: #ffffff !important;
-*/
-
-  /* clear: both;
-    position: relative;
-    height: 200px;
-    margin-top: -200px; */
 }

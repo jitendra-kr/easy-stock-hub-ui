@@ -1,6 +1,8 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { isEmpty, get } from "lodash";
 import { useRouter } from "next/router";
+import styles from "./MainHeader.module.css";
+
 
 import Link from "next/link";
 import { Layout, Menu, Dropdown, Grid, Drawer, Row, Col } from "antd";
@@ -116,15 +118,20 @@ let user = false;
         theme="dark"
         mode={md ? "horizontal" : "inline"}
         defaultSelectedKeys={[selectedTab]}
-        style={{ textAlign: "center" }}
+        style={{ textAlign: "center", float: 'right' }}
       >
-        <Menu.Item key="3" onClick={onDrawerClose}>
-          <Link href="/blog" style={{ color: "#ffffff" }}>
-            IPO
+        <Menu.Item key="1" onClick={onDrawerClose}>
+          <Link href="/" style={{ color: "#ffffff" }}>
+            Home
           </Link>
         </Menu.Item>
         <Menu.Item key="2" onClick={onDrawerClose}>
-          <Link href="/questions" style={{ color: "#ffffff" }}>
+          <Link href="/" style={{ color: "#ffffff" }}>
+            IPO
+          </Link>
+        </Menu.Item>
+        <Menu.Item key="3" onClick={onDrawerClose}>
+          <Link href="/" style={{ color: "#ffffff" }}>
             Market
           </Link>
         </Menu.Item>
@@ -155,21 +162,36 @@ let user = false;
 
   return md !== undefined ? (
     <Layout>
-      <Header className="header">
+      <Header className="header theme-color">
         <Row>
           <Col span={8}>
             <Link href="/">
-              <span
+              <div
                 onClick={resetTabsSelection}
                 style={{
                   color: "#ffffff",
                   fontSize: "x-large",
-                  fontFamily: "math",
+                  fontFamily: "cursive",
                   cursor: "pointer",
                 }}
               >
-                Jimmypoint
-              </span>
+                <span>
+                Easy Stock Hub
+                </span>
+                {/* <p>
+                Easy 
+                </p>
+                <p>
+                Stock Hub
+                </p> */}
+
+                  {/* <div className={styles.circle}>
+                    Easy Stock Hub
+                    </div> */}
+
+                
+                {/* <img src='../../../logo.PNG' ></img> */}
+              </div>
             </Link>
           </Col>
           <Col span={8}></Col>
