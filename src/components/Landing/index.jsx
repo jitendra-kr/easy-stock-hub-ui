@@ -1,12 +1,18 @@
 
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 
 import { AutoComplete, Input } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
+import { debounce } from "lodash";
+import { httpGet } from "../../utils";
+
+
 import styles from "./Landing.module.css";
 
 const mockVal = (str, repeat = 1) => ({
   value: str.repeat(repeat),
+  label: "111",
+  l: 1
 });
 
 const suffix = (
@@ -19,7 +25,7 @@ const suffix = (
 );
 
 export default function Landing() {
-
+  const [loading, setLoading] = useState(false)
   const [value, setValue] = useState('');
   const [options, setOptions] = useState([]);
 
@@ -27,15 +33,47 @@ export default function Landing() {
     setOptions(
       !searchText ? [] : [mockVal(searchText), mockVal(searchText, 2), mockVal(searchText, 3)],
     );
+    console.log(options)
   };
 
   const onSelect = (data) => {
     console.log('onSelect', data);
   };
 
-  const onChange = (data) => {
-    setValue(data);
-  };
+
+  const debouncedSearch = useCallback(
+    debounce(nextValue => {
+      setLoading(true);
+      httpGet({
+        url: 'http://localhost:3005/api/search/symbol?q=' + nextValue
+      }).then((res) => {
+        setOptions(res.result.map((o, i) => {
+          
+          o.value = o.symbol;
+          o.label = o.description;
+          o.displaysymbol = o.displaySymbol;
+          o.key = i
+          delete o.displaySymbol;
+          return o;
+        }))
+        setLoading(false)
+      }).catch((e) => {
+        setLoading(false)
+        console.log(e);
+      })
+      console.log(nextValue)
+      
+    }, 1000),
+    []
+);
+
+const onChange = event => {
+    setValue(event)
+    setOptions([]);
+    console.log(value);
+    debouncedSearch(event);
+};
+
 
   return (
     <>
@@ -48,16 +86,15 @@ export default function Landing() {
       <div  className="text-center">
 
       <AutoComplete
-          value={value}
           options={options}
           style={{
             width: '60%',
             marginTop: '10px'
           }}
           onSelect={onSelect}
-          onSearch={onSearch}
           onChange={onChange}
           allowClear={true}
+          notFoundContent={!value.length ? false : loading && value.length && options.length === 0 ? "Loading" : !loading && !options.length && value ? 'No Data Found' : false }
           >
                   <Input className={styles['input']} suffix={suffix} size="large" placeholder="Type here to search" />
 

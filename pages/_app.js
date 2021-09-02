@@ -2,6 +2,9 @@
 import { Layout, Row, Col } from 'antd';
 import { MainFooter, MainHeader } from '../src/components'
 
+// import { sample } from 'lodash';
+// import axios from "axios";
+// import Config from '../src/config/env';
 import '../styles/globals.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'antd/dist/antd.css';
@@ -9,9 +12,17 @@ import 'antd/dist/antd.css';
 
 const { Content } = Layout;
 
+// const baseUrls = Config.getData().default.baseUrl;
 
 function MyApp({ Component, pageProps }) {
-  console.log(Component)
+
+  // axios.interceptors.request.use(config => {
+  //   config.baseURL = sample(baseUrls);
+  //   return config;
+  // });
+
+
+
   return <Layout className='white-bg'>
     <MainHeader></MainHeader>
 

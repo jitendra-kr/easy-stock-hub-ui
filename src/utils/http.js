@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function headersConfig () {
     return {
-        headers: { Authorization:  `Bearer ${localStorage.getItem('auth')} `}
+        // headers: { Authorization:  `Bearer ${localStorage.getItem('auth')} `}
     }
 }
 
