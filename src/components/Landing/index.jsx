@@ -48,13 +48,12 @@ export default function Landing() {
         url: 'http://localhost:3005/api/search/symbol?q=' + nextValue
       }).then((res) => {
         setOptions(res.result.map((o, i) => {
-          
-          o.value = o.symbol;
-          o.label = o.description;
-          o.displaysymbol = o.displaySymbol;
-          o.key = i
-          delete o.displaySymbol;
-          return o;
+          let data = {
+            value: o.securityId,
+            label: o.issuerName,
+            key: i
+          };
+          return data;
         }))
         setLoading(false)
       }).catch((e) => {
