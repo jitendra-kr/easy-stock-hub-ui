@@ -1,7 +1,8 @@
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 
 import { AutoComplete, Input, Tag } from 'antd';
+import { useRouter } from 'next/router'
 import { SearchOutlined } from '@ant-design/icons';
 import { debounce } from "lodash";
 import { httpGet } from "../../utils";
@@ -24,8 +25,18 @@ export default function Landing() {
   const [loading, setLoading] = useState(false)
   const [value, setValue] = useState('');
   const [options, setOptions] = useState([]);
+  const router = useRouter()
+
+  useEffect(() => {
+    return () => {
+      setLoading(false);
+      setValue('');
+      setOptions([]);
+    };
+}, []);
 
   const onSelect = (data) => {
+    router.push('/company/abc');
     console.log('onSelect', data);
   };
 
@@ -37,8 +48,8 @@ export default function Landing() {
       }).then((res) => {
         setOptions(res.result.map((o, i) => {
           let data = {
-            value: o.securityId,
-            label: o.issuerName,
+            value: o.symbol,
+            label: o.name,
             key: i
           };
           return data;
