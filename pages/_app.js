@@ -24,20 +24,20 @@ function MyApp({ Component, pageProps }) {
 
 
   return <Layout className='white-bg'>
-    {/* <MainHeader></MainHeader> */}
+    <MainHeader></MainHeader>
 
     <Content >
-      <h1 style={{marginTop: '150px', textAlign: 'center'}} > Under Development  </h1>
-      {/* <Row className='min-height-custom' >
+      {/* <h1 style={{marginTop: '150px', textAlign: 'center'}} > Under Development  </h1> */}
+      <Row className='min-height-custom' >
         <Col xxl={20} xl={20} lg={20} md={20} sm={24} xs={24} style={{ padding: "50px 10px 59px 56px" }}>        
             <Component {...pageProps} />
         </Col>
         <Col xxl={4} xl={4} lg={4} md={4} sm={24} xs={24}>
           col-12
           </Col>
-      </Row> */}
+      </Row>
     </Content>
-    {/* <MainFooter></MainFooter> */}
+    <MainFooter></MainFooter>
   </Layout>
 }
 
