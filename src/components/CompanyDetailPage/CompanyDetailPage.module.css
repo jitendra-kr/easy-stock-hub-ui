@@ -1,0 +1,46 @@
+
+.card-bg {
+    /* background-color:#F5F8FD !important; */
+}
+
+.float-right {
+    float: right;
+}
+
+.overview-data {
+    margin-bottom: 0 !important;
+}
+
+.margin-top-ov-data {
+    margin-top: 15px;
+}
+
+.cur-price {
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 45px;
+    
+}
+
+.anticon > svg {
+    vertical-align: initial !important;
+}
+
+.cur-price-icon{
+    margin-left: 2px;
+    font-size: 26px;    
+}
+
+.cur-price-change{
+    font-weight: 500;
+    font-size: 1rem;
+    margin-top: -0.5rem;   
+}
+
+.cur-price-up-icon-clr{
+    color:#0DE167;   
+}
+
+.ant-card {
+    border-radius: 15px !important;
+}

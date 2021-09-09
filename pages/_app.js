@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }) {
 
 
 
-  return <Layout className='white-bg'>
+  return <Layout className='page-bg-clr'>
     <MainHeader></MainHeader>
 
     <Content >
