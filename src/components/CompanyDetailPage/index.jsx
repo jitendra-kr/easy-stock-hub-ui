@@ -1,7 +1,7 @@
 
 import { Card } from 'antd';
 import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
-import { CompanyPeers, ShareHoldingPattern } from "../index";
+import { CompanyPeers, ShareHoldingPattern, CompanyRatios } from "../index";
 import styles from "./CompanyDetailPage.module.css";
 
 let antChart;
@@ -10,46 +10,9 @@ if (typeof window !== 'undefined') {
    antChart = require('@ant-design/charts');
 }
 
-const salesData = [
-   {
-       type: '2000',
-       sales: 38,
-   },
-   {
-       type: '2001',
-       sales: 52,
-   },
-   {
-       type: '2002',
-       sales: 200,
-   },
-   {
-       type: '2003',
-       sales: 145,
-   },
-   {
-       type: '2004',
-       sales: 48,
-   }
-];
 
-const salesConfig = {
-   height: 200,
-   data: salesData,
-   xField: 'type',
-   yField: 'sales',
-   label: {
-       position: 'middle',
-       style: {
-           fill: '#FFFFFF',
-           opacity: 0.6,
-       },
-   },
-   meta: {
-       type: { alias: 'Category' },
-       sales: { alias: 'Sales' },
-   },
-};
+
+
 
 const data = [
    { "date": "Jan 1 2000", "price": 1394.46 },
@@ -177,23 +140,6 @@ const data = [
    { "date": "Mar 1 2010", "price": 1140.45 }
 ];
 
-const ratioData = [
-   { year: '1991', value: 3 },
-   { year: '1992', value: 4 },
-   { year: '1993', value: 3.5 },
-   { year: '1994', value: 5 },
-   { year: '1999', value: 13 },
- ];
- const ratioConfig = {
-   data: ratioData,
-   height: 200,
-   xField: 'year',
-   yField: 'value',
-   point: {
-     size: 5,
-     shape: 'diamond',
-   },
- };
 
 const config = {
    data,
@@ -315,62 +261,15 @@ function CompanyDetailPage() {
 
 
       </div>
-      {/* <div className='row' style={{ marginTop: '20px' }} >
-         <div className="col-lg-6" >
-            <Card title="PE Chart" className={styles['card-bg']}>
-               {antChart ? <antChart.Area
-                  {...config}
-               /> : ''}
-            </Card>
-
-         </div>
-         <div className="col-lg-6" >
-            <Card title="PB Chart" className={styles['card-bg']}>
-               {antChart ? <antChart.Area
-                  {...config}
-               /> : ''}
-            </Card>
-         </div>
-      </div> */}
-      <div className='row' style={{ marginTop: '20px' }} >
-         <div className="col-lg-3" >
-            <Card title="Sales Growth" className={styles['card-bg']}>
-            {antChart ? <antChart.Column 
-                  {...salesConfig}
-               /> : ''}
-            </Card>
-
-         </div>
-         <div className="col-lg-3" >
-            <Card title="Profit Growth" className={styles['card-bg']}>
-            {antChart ? <antChart.Column 
-                  {...salesConfig}
-               /> : ''}
-            </Card>
-         </div>
-         <div className="col-lg-3" >
-            <Card title="ROE" className={styles['card-bg']}>
-               {antChart ? <antChart.Column 
-                  {...salesConfig}
-               /> : ''}
-            </Card>
-         </div>
-         <div className="col-lg-3" >
-            <Card title="ROCE" className={styles['card-bg']}>
-            {antChart ? <antChart.Column 
-                  {...salesConfig}
-               /> : ''}
-            </Card>
-         </div>
-
-
+      <div style={{ marginTop: '20px' }} >
+               <CompanyRatios antChart={antChart} />
       </div>
 
       <div className = 'row' style={{ marginTop: '30px' }}>
                <CompanyPeers/>
       </div>
-      <div className = 'row' style={{ marginTop: '30px' }}>
-               <ShareHoldingPattern/>
+      <div  style={{ marginTop: '30px' }}>
+               <ShareHoldingPattern  antChart={antChart}/>
       </div>
    </>
 }

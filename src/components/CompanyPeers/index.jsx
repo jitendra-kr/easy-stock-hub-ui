@@ -51,7 +51,7 @@ function CompanyPeers() {
       ];
     return <>
         <div style={{backgroundColor: '#ffffff'}} >
-            <h3 style={{padding: '10px'}} >Company Peers </h3>
+            <h3 style={{padding: '10px', textAlign: 'center'}} >Company Peers </h3>
             <Table columns={columns} dataSource={data} pagination = {false}/>
         </div>
     </>
