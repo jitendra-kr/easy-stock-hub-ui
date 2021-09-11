@@ -1,7 +1,11 @@
 
 import { Card } from 'antd';
 import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
-import { CompanyPeers, ShareHoldingPattern, CompanyRatios } from "../index";
+import { 
+   CompanyPeers, 
+   ShareHoldingPattern, 
+   CompanyRatios,
+   QuarterlyResults } from "../index";
 import styles from "./CompanyDetailPage.module.css";
 
 let antChart;
@@ -269,7 +273,10 @@ function CompanyDetailPage() {
                <CompanyPeers/>
       </div>
       <div  style={{ marginTop: '30px' }}>
-               <ShareHoldingPattern  antChart={antChart}/>
+               <ShareHoldingPattern/>
+      </div>
+      <div  style={{ marginTop: '30px' }}>
+               <QuarterlyResults />
       </div>
    </>
 }
