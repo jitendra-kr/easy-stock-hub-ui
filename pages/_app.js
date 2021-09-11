@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }) {
   return <Layout className='page-bg-clr'>
     <MainHeader></MainHeader>
 
-    <Content >
+    <Content style = {{marginTop: '40px'}} >
       {/* <h1 style={{marginTop: '150px', textAlign: 'center'}} > Under Development  </h1> */}
       <Row className='min-height-custom' >
         <Col xxl={20} xl={20} lg={20} md={20} sm={24} xs={24} style={{ padding: "50px 10px 59px 56px" }}>        

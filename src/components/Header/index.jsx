@@ -163,7 +163,7 @@ let user = false;
 
   return md !== undefined ? (
     <Layout>
-      <Header className={styles['header'], "theme-color"}>
+      <Header className={styles['header'] + ' ' + "theme-color"}>
         <Row>
           <Col span={8}>
             <Link href="/">

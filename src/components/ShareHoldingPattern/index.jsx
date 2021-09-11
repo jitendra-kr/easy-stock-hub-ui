@@ -1,116 +1,115 @@
-import { Table, Tabs } from 'antd';
-const { TabPane } = Tabs;
+import { Table } from 'antd';
 
 
-const PatternChart = ({ antChart }) => {
-  var data = [
+function ShareHoldingPattern() {
+  const columns = [
     {
-      type: 'Promoters',
-      value: 50,
+      title: 'PARTICULAR',
+      dataIndex: 'PARTICULAR',
+      key: 'PARTICULAR',
+      render: text => <a>{text}</a>,
     },
     {
-      type: 'Mutual Funds',
-      value: 5,
+      title: 'JUN 2020',
+      dataIndex: 'JUN2020',
+      key: 'JUN2020',
+      render: text => <a>{text}</a>,
     },
     {
-      type: 'Domestic Institutions',
-      value: 5,
+      title: 'SEP 2020',
+      dataIndex: 'SEP2020',
+      key: 'SEP2020',
     },
     {
-      type: 'Foreign Institutions',
-      value: 10,
+      title: 'DEC 2020',
+      dataIndex: 'DEC2020',
+      key: 'DEC2020',
     },
     {
-      type: 'Retail and Others',
-      value: 30,
+      title: 'MAR 2021',
+      key: 'MAR2021',
+      dataIndex: 'MAR2021'
+    },
+    {
+      title: 'JUN 2021',
+      key: 'JUN2021',
+      dataIndex: 'JUN2021'
     }
   ];
-  var config = {
-    appendPadding: 10,
-    data: data,
-    angleField: 'value',
-    colorField: 'type',
-    radius: 0.9,
-    label: {
-      type: 'inner',
-      offset: '-30%',
-      content: function content(_ref) {
-        return ''.concat(_ref.value, '%');
-      },
-      style: {
-        fontSize: 14,
-        textAlign: 'center',
-      },
+  
+  const data = [
+    {
+      key: '1',
+      PARTICULAR: 'Promoters',
+      JUN2020: 32,
+      SEP2020: 32,
+      DEC2020: 54,
+      MAR2021: 21,
+      JUN2021: 19
     },
-    interactions: [{ type: 'element-active' }],
-  };
-
-  return <antChart.Pie {...config} />;
-}
-
-function ShareHoldingPattern({ antChart }) {
-
+    {
+      key: '2',
+      PARTICULAR: 'Shareholding Pledge',
+      JUN2020: 32,
+      SEP2020: 32,
+      DEC2020: 54,
+      MAR2021: 21,
+      JUN2021: 19
+    },
+    {
+      key: '3',
+      PARTICULAR: 'Mutual Funds',
+      JUN2020: 32,
+      SEP2020: 32,
+      DEC2020: 54,
+      MAR2021: 21,
+      JUN2021: 19
+    },
+    {
+      key: '4',
+      PARTICULAR: 'Promoters',
+      JUN2020: 32,
+      SEP2020: 32,
+      DEC2020: 54,
+      MAR2021: 21,
+      JUN2021: 19
+    },
+    {
+      key: '5',
+      PARTICULAR: 'Domestic Institutions',
+      JUN2020: 32,
+      SEP2020: 32,
+      DEC2020: 54,
+      MAR2021: 21,
+      JUN2021: 19
+    },
+    {
+      key: '6',
+      PARTICULAR: 'Foreign Institutions',
+      JUN2020: 32,
+      SEP2020: 32,
+      DEC2020: 54,
+      MAR2021: 21,
+      JUN2021: 19
+    },
+    {
+      key: '7',
+      PARTICULAR: 'Retail and Others',
+      JUN2020: 32,
+      SEP2020: 32,
+      DEC2020: 54,
+      MAR2021: 21,
+      JUN2021: 19
+    },
+    
+  ];
   return <>
     <div style={{ backgroundColor: '#ffffff' }} className='row'>
       <h3 style={{ padding: '10px', textAlign: 'center' }} >Share Holding Pattern </h3>
-      <Tabs defaultActiveKey="1" >
-        <TabPane tab="Promoters" key="1">
-          <div className='row'>
-            <div className='col-lg-7' >
-              Content of Tab Pane 1
-            </div>
-            <div className='col-lg-5'>
-              <PatternChart antChart={antChart} />
-
-            </div>
-          </div>
-
-        </TabPane>
-        <TabPane tab="Mutual Funds" key="2">
-          <div className='row'>
-            <div className='col-lg-7' >
-              Content of Tab Pane Mutual Fund
-            </div>
-            <div className='col-lg-5'>
-              <PatternChart antChart={antChart} />
-
-            </div>
-          </div>
-        </TabPane>
-        <TabPane tab="Domestic Institutions" key="3">
-          <div className='row'>
-            <div className='col-lg-7' >
-              Content of Tab DI
-            </div>
-            <div className='col-lg-5'>
-              <PatternChart antChart={antChart} />
-
-            </div>
-          </div>
-        </TabPane>
-        <TabPane tab="Foreign Institutions" key="4">
-          <div className='row'>
-            <div className='col-lg-7' >
-              Content of Tab FI
-            </div>
-            <div className='col-lg-5'>
-              <PatternChart antChart={antChart} />
-
-            </div>
-          </div>
-        </TabPane>
-        <TabPane tab="Retail and Others" key="5">
-          <div className='row'>
-            <div className='col-lg-7' >
-              Content of Tab FI
-            </div>
-            <div className='col-lg-5'>
-              <PatternChart antChart={antChart} />
-
-            </div>
-          </div>
-        </TabPane>
-      </Tabs>
+      <div className='col-lg-12' >
+      <Table columns={columns} dataSource={data} pagination = {false}/>
+      </div>
+      
     </div>
   </>
 
