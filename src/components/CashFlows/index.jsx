@@ -1,13 +1,13 @@
 import { Table } from 'antd';
 
 
-function QuarterlyResults() {
+function CashFlows() {
   const columns = [
     {
       title: 'PARTICULAR',
       dataIndex: 'PARTICULAR',
       key: 'PARTICULAR',
-      render: text => <a>{text}</a>,
+      render: text => <a>{text}</a> 
     },
     {
       title: 'JUN 2020',
@@ -40,7 +40,7 @@ function QuarterlyResults() {
   const data = [
     {
       key: '1',
-      PARTICULAR: 'Net Sales',
+      PARTICULAR: 'Investing Cash Flow',
       JUN2020: 32,
       SEP2020: 32,
       DEC2020: 54,
@@ -49,7 +49,7 @@ function QuarterlyResults() {
     },
     {
       key: '2',
-      PARTICULAR: 'Operating Expenses',
+      PARTICULAR: 'Operating Cash Flow',
       JUN2020: 32,
       SEP2020: 32,
       DEC2020: 54,
@@ -58,7 +58,7 @@ function QuarterlyResults() {
     },
     {
       key: '3',
-      PARTICULAR: 'Operating Profit',
+      PARTICULAR: 'Financing Cash Flow',
       JUN2020: 32,
       SEP2020: 32,
       DEC2020: 54,
@@ -67,72 +67,17 @@ function QuarterlyResults() {
     },
     {
       key: '4',
-      PARTICULAR: 'Other Income',
-      JUN2020: 32,
-      SEP2020: 32,
-      DEC2020: 54,
-      MAR2021: 21,
-      JUN2021: 19
-    },
-    {
-      key: '5',
-      PARTICULAR: 'Depreciation',
-      JUN2020: 32,
-      SEP2020: 32,
-      DEC2020: 54,
-      MAR2021: 21,
-      JUN2021: 19
-    },
-    {
-      key: '6',
-      PARTICULAR: 'Interest',
-      JUN2020: 32,
-      SEP2020: 32,
-      DEC2020: 54,
-      MAR2021: 21,
-      JUN2021: 19
-    },
-    {
-      key: '7',
-      PARTICULAR: 'Profit Before Tax',
-      JUN2020: 32,
-      SEP2020: 32,
-      DEC2020: 54,
-      MAR2021: 21,
-      JUN2021: 19
-    },
-    {
-      key: '8',
-      PARTICULAR: 'Tax',
-      JUN2020: 32,
-      SEP2020: 32,
-      DEC2020: 54,
-      MAR2021: 21,
-      JUN2021: 19
-    },
-    {
-      key: '9',
-      PARTICULAR: 'Net Profit',
-      JUN2020: 32,
-      SEP2020: 32,
-      DEC2020: 54,
-      MAR2021: 21,
-      JUN2021: 19
-    },
-    {
-      key: '10',
-      PARTICULAR: 'Adj EPS',
+      PARTICULAR: 'Net Cash Flow',
       JUN2020: 32,
       SEP2020: 32,
       DEC2020: 54,
       MAR2021: 21,
       JUN2021: 19
     }
-    
   ];
   return <>
     <div style={{ backgroundColor: '#ffffff' }} className='row'>
-      <h3 style={{ padding: '10px', textAlign: 'center' }} >Quarterly Result (All Figures in Cr. Adjusted EPS in Rs.)
+      <h3 style={{ padding: '10px', textAlign: 'center' }} >Cashflow Statement (All Figures in Cr. Adjusted EPS in Rs.)
  </h3>
       <div className='col-lg-12' >
       <Table columns={columns} dataSource={data} pagination = {false}/>
@@ -144,4 +89,4 @@ function QuarterlyResults() {
 
 
 
-export default QuarterlyResults;
+export default CashFlows;

@@ -1,13 +1,23 @@
 import { Table } from 'antd';
 
 
-function QuarterlyResults() {
+function ProfitAndLoss() {
   const columns = [
     {
       title: 'PARTICULAR',
       dataIndex: 'PARTICULAR',
       key: 'PARTICULAR',
-      render: text => <a>{text}</a>,
+      render: text => {
+        let txt;
+        if(text === 'Assets' || text === 'Equity and Liabilities') {
+          txt = <b>{text}</b>
+
+        } else {
+          txt = <a>{text}</a>
+
+        }
+        return txt;
+      } 
     },
     {
       title: 'JUN 2020',
@@ -40,16 +50,11 @@ function QuarterlyResults() {
   const data = [
     {
       key: '1',
-      PARTICULAR: 'Net Sales',
-      JUN2020: 32,
-      SEP2020: 32,
-      DEC2020: 54,
-      MAR2021: 21,
-      JUN2021: 19
+      PARTICULAR: 'Equity and Liabilities'
     },
     {
       key: '2',
-      PARTICULAR: 'Operating Expenses',
+      PARTICULAR: 'Share Capital',
       JUN2020: 32,
       SEP2020: 32,
       DEC2020: 54,
@@ -58,7 +63,7 @@ function QuarterlyResults() {
     },
     {
       key: '3',
-      PARTICULAR: 'Operating Profit',
+      PARTICULAR: 'Reserves & Surplus',
       JUN2020: 32,
       SEP2020: 32,
       DEC2020: 54,
@@ -67,7 +72,7 @@ function QuarterlyResults() {
     },
     {
       key: '4',
-      PARTICULAR: 'Other Income',
+      PARTICULAR: 'Current Liabilities',
       JUN2020: 32,
       SEP2020: 32,
       DEC2020: 54,
@@ -76,7 +81,7 @@ function QuarterlyResults() {
     },
     {
       key: '5',
-      PARTICULAR: 'Depreciation',
+      PARTICULAR: 'Other Liabilities',
       JUN2020: 32,
       SEP2020: 32,
       DEC2020: 54,
@@ -85,7 +90,20 @@ function QuarterlyResults() {
     },
     {
       key: '6',
-      PARTICULAR: 'Interest',
+      PARTICULAR: 'Total Liabilities',
+      JUN2020: 32,
+      SEP2020: 32,
+      DEC2020: 54,
+      MAR2021: 21,
+      JUN2021: 19
+    },   
+    {
+      key: '11',
+      PARTICULAR: 'Assets'
+    },
+    {
+      key: '12',
+      PARTICULAR: 'Fixed Assets',
       JUN2020: 32,
       SEP2020: 32,
       DEC2020: 54,
@@ -93,8 +111,8 @@ function QuarterlyResults() {
       JUN2021: 19
     },
     {
-      key: '7',
-      PARTICULAR: 'Profit Before Tax',
+      key: '13',
+      PARTICULAR: 'Current Assets',
       JUN2020: 32,
       SEP2020: 32,
       DEC2020: 54,
@@ -102,8 +120,8 @@ function QuarterlyResults() {
       JUN2021: 19
     },
     {
-      key: '8',
-      PARTICULAR: 'Tax',
+      key: '14',
+      PARTICULAR: 'Other Assets',
       JUN2020: 32,
       SEP2020: 32,
       DEC2020: 54,
@@ -111,28 +129,18 @@ function QuarterlyResults() {
       JUN2021: 19
     },
     {
-      key: '9',
-      PARTICULAR: 'Net Profit',
+      key: '15',
+      PARTICULAR: 'Total Assets',
       JUN2020: 32,
       SEP2020: 32,
       DEC2020: 54,
       MAR2021: 21,
       JUN2021: 19
     },
-    {
-      key: '10',
-      PARTICULAR: 'Adj EPS',
-      JUN2020: 32,
-      SEP2020: 32,
-      DEC2020: 54,
-      MAR2021: 21,
-      JUN2021: 19
-    }
-    
   ];
   return <>
     <div style={{ backgroundColor: '#ffffff' }} className='row'>
-      <h3 style={{ padding: '10px', textAlign: 'center' }} >Quarterly Result (All Figures in Cr. Adjusted EPS in Rs.)
+      <h3 style={{ padding: '10px', textAlign: 'center' }} >Profit and Loss (All Figures in Cr. Adjusted EPS in Rs.)
  </h3>
       <div className='col-lg-12' >
       <Table columns={columns} dataSource={data} pagination = {false}/>
@@ -144,4 +152,4 @@ function QuarterlyResults() {
 
 
 
-export default QuarterlyResults;
+export default ProfitAndLoss;

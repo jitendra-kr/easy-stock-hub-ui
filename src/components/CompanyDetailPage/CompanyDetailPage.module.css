@@ -23,7 +23,7 @@
 }
 
 .anticon > svg {
-    vertical-align: initial !important;
+    vertical-align: unset !important;
 }
 
 .cur-price-icon{

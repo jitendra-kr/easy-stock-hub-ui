@@ -5,7 +5,9 @@ import {
    CompanyPeers, 
    ShareHoldingPattern, 
    CompanyRatios,
-   QuarterlyResults } from "../index";
+   QuarterlyResults,
+   ProfitAndLoss,
+   CashFlows } from "../index";
 import styles from "./CompanyDetailPage.module.css";
 
 let antChart;
@@ -278,6 +280,12 @@ function CompanyDetailPage() {
       <div  style={{ marginTop: '30px' }}>
                <QuarterlyResults />
       </div>
+      <div  style={{ marginTop: '30px' }}>
+               <ProfitAndLoss />
+      </div>      
+      <div  style={{ marginTop: '30px' }}>
+               <CashFlows />
+      </div>  
    </>
 }
 
