@@ -36,8 +36,7 @@ export default function Landing() {
 }, []);
 
   const onSelect = (data) => {
-    router.push('/company/abc');
-    console.log('onSelect', data);
+    router.push('/company/' + data);
   };
 
 
