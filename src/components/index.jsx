@@ -8,4 +8,10 @@ export { default as CompanyRatios } from './CompanyRatios';
 export { default as QuarterlyResults } from './QuarterlyResults';
 export { default as ProfitAndLoss } from './ProfitAndLoss';
 export { default as CashFlows } from './CashFlows';
+export { default as PriceChart } from './PriceChart';
+export { default as PeChart } from './PeChart';
+export { default as PbChart } from './PbChart';
+export { default as AreaChartFn } from './AreaChartFn';
+
+
 
